@@ -10,7 +10,7 @@ public class InitTests
         var client = new CoinGeckoClient();
 
         var expected = await client.PingAsync();
-        
+
         Assert.True(expected);
     }
 }

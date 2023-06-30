@@ -1,65 +1,51 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.IO.IsolatedStorage;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
-using CoinGecko.Api;
+﻿using System.Windows;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using ConfigurationManager = Microsoft.Extensions.Configuration.ConfigurationManager;
 
-namespace CoinGecko
+namespace CoinGecko;
+
+public partial class App : Application
 {
+    private readonly IHost _host;
 
-    public partial class App : Application
+    public App()
     {
-        private readonly IHost _host;
+        _host = Host
+            .CreateDefaultBuilder()
+            .ConfigureServices(ConfigureServices)
+            .Build();
+    }
 
-        public App()
-        {
+    private static void ConfigureServices(HostBuilderContext context, IServiceCollection services)
+    {
+        services
+            .AddWindows()
+            .AddJsonConfiguration()
+            .AddPages()
+            .AddCoinGeckoClient();
+    }
 
-            _host = Host
-                .CreateDefaultBuilder()
-                .ConfigureServices(ConfigureServices)
-                .Build();
-        }
+    protected override void OnStartup(StartupEventArgs e)
+    {
+        _host.Start();
 
-        private static void ConfigureServices(HostBuilderContext context, IServiceCollection services)
-        {
-            services
-                .AddWindows()
-                .AddJsonConfiguration()
-                .AddPages()
-                .AddCoinGeckoClient();
-        }
+        var services = _host.Services;
 
-        protected override void OnStartup(StartupEventArgs e)
-        {
-            _host.Start();
+        MainWindow = services.GetRequiredService<MainWindow>();
 
-            var services = _host.Services;
-            
-            MainWindow = services.GetRequiredService<MainWindow>();
+        var configuration = services.GetRequiredService<IConfiguration>();
 
-            var configuration = services.GetRequiredService<IConfiguration>();
+        MainWindow.Show();
 
-            MainWindow.Show();
+        base.OnStartup(e);
+    }
 
-            base.OnStartup(e);
-        }
+    protected override void OnExit(ExitEventArgs e)
+    {
+        _host.StopAsync();
+        _host.Dispose();
 
-        protected override void OnExit(ExitEventArgs e)
-        {
-            _host.StopAsync();
-            _host.Dispose();
-
-            base.OnExit(e);
-        }
-
-
+        base.OnExit(e);
     }
 }

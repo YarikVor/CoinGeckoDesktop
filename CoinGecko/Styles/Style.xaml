@@ -2,6 +2,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <FontFamily x:Key="Inter">/Fonts/#Inter</FontFamily>
     <Style x:Key="Styles" TargetType="Control">
-        <Setter Property="FontFamily" Value="Inter"></Setter>
+        <Setter Property="FontFamily" Value="Inter" />
     </Style>
 </ResourceDictionary>

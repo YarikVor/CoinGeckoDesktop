@@ -1,11 +1,13 @@
 namespace CoinGecko.Api.Dto.Coins;
 
-public class CoinsDto: CoinsItemWithPlatformsDto
+public class CoinsDto : CoinsItemWithPlatformsDto
 {
     public Dictionary<string, DetailPlatform> DetailPlatforms { get; set; }
     public int BlockTimeInMinutes { get; set; }
     public string? HashingAlgorithm { get; set; }
+
     public string[] Categories { get; set; }
+
     //TODO: type isn't know
     public object? PublicNotice { get; set; }
     public object[] AdditionalNotices { get; set; }

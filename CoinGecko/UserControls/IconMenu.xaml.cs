@@ -7,23 +7,23 @@ namespace CoinGecko.Panels;
 
 public partial class IconMenu : UserControl
 {
+    public static readonly DependencyProperty ImageSourceProperty = DependencyProperty.Register(
+        nameof(ImageSource),
+        typeof(ImageSource),
+        typeof(IconMenu)
+    );
+
+    public static readonly DependencyProperty TitleProperty = DependencyProperty.Register(
+        nameof(Title),
+        typeof(string),
+        typeof(IconMenu)
+    );
+
     public IconMenu()
     {
         InitializeComponent();
         DataContext = this;
     }
-
-    public static readonly DependencyProperty ImageSourceProperty = DependencyProperty.Register(
-        nameof(IconMenu.ImageSource),
-        typeof(ImageSource),
-        typeof(IconMenu)
-    );
-    
-    public static readonly DependencyProperty TitleProperty = DependencyProperty.Register(
-        nameof(IconMenu.Title),
-        typeof(string),
-        typeof(IconMenu)
-    );
 
     public ImageSource ImageSource
     {
@@ -36,8 +36,8 @@ public partial class IconMenu : UserControl
         get => (string)GetValue(TitleProperty);
         set => SetValue(TitleProperty, value);
     }
-    
+
     public Type PageType { get; set; }
-    
+
     public event Action OnClick;
 }

@@ -7,7 +7,7 @@ public class CoinGeckoClient
 {
     public const string BaseUri = "https://api.coingecko.com/api/v3/";
 
-    private const string PingUrl = $"ping";
+    private const string PingUrl = "ping";
 
     private const string ListCoinsUrl = "coins/list?include_platform={0}";
 
@@ -44,5 +44,4 @@ public class CoinGeckoClient
 
         return _client.GetStreamAsync(requestUri);
     }
-
 }

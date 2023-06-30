@@ -8,8 +8,8 @@
              d:DesignHeight="48" d:DesignWidth="300">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
         <Button Background="Transparent" Padding="0" HorizontalContentAlignment="Left" BorderBrush="Transparent">
             <StackPanel Orientation="Vertical">
@@ -17,15 +17,18 @@
                            Text="{Binding Nick, RelativeSource= {RelativeSource AncestorType={x:Type local:CoinItem}}   }" />
                 <StackPanel Orientation="Horizontal">
                     <TextBlock FontStyle="Italic">@</TextBlock>
-                    <TextBlock FontStyle="Italic" Text="{Binding Id, RelativeSource= {RelativeSource AncestorType={x:Type local:CoinItem}}}" />
-                    <TextBlock Text="-" Margin="4 0"/>
-                    <TextBlock Text="{Binding Symbol, RelativeSource= {RelativeSource AncestorType={x:Type local:CoinItem}}}" />
+                    <TextBlock FontStyle="Italic"
+                               Text="{Binding Id, RelativeSource= {RelativeSource AncestorType={x:Type local:CoinItem}}}" />
+                    <TextBlock Text="-" Margin="4 0" />
+                    <TextBlock
+                        Text="{Binding Symbol, RelativeSource= {RelativeSource AncestorType={x:Type local:CoinItem}}}" />
                 </StackPanel>
             </StackPanel>
         </Button>
         <Button Grid.Column="1" Background="Transparent" Padding="0" BorderBrush="Transparent">
-            <Image  VerticalAlignment="Top" HorizontalAlignment="Right" Height="48" x:Name="Star" Source="../Images/Icons/FillStar.png" />
+            <Image VerticalAlignment="Top" HorizontalAlignment="Right" Height="48" x:Name="Star"
+                   Source="../Images/Icons/FillStar.png" />
         </Button>
-        
+
     </Grid>
 </UserControl>

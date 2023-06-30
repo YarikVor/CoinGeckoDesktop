@@ -9,7 +9,7 @@ public partial class CoinItem : UserControl
         InitializeComponent();
         DataContext = this;
     }
-    
+
     public string Nick { get; set; }
     public string Id { get; set; }
     public string Symbol { get; set; }

@@ -2,13 +2,10 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Windows;
 using System.Windows.Controls;
 using CoinGecko.Api;
-using CoinGecko.Pages;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 
 namespace CoinGecko;
 
@@ -35,7 +32,7 @@ public static class ServicesEx
         var configuration = new ConfigurationBuilder();
         configuration
             .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile(fileName, optional: true, reloadOnChange: true)
+            .AddJsonFile(fileName, true, true)
             .AddEnvironmentVariables();
         return configuration.Build();
     }
@@ -47,10 +44,7 @@ public static class ServicesEx
             .GetTypes()
             .Where(t => t.IsAssignableTo(typeof(Page)));
 
-        foreach (var pageType in pageTypes)
-        {
-            service.AddSingleton(pageType);
-        }
+        foreach (var pageType in pageTypes) service.AddSingleton(pageType);
 
         return service;
     }

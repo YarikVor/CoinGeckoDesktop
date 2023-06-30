@@ -5,7 +5,6 @@
                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                 xmlns:local="clr-namespace:CoinGecko"
                 xmlns:panels="clr-namespace:CoinGecko.Panels"
-                xmlns:userControls="clr-namespace:CoinGecko.UserControls"
                 xmlns:pages="clr-namespace:CoinGecko.Pages"
                 mc:Ignorable="d"
                 Title="MainWindow" Height="450" Width="800"
@@ -18,7 +17,7 @@
                                      PageType="{x:Type pages:Find}" />
                     <panels:IconMenu Width="112" Title="Saved" ImageSource="Images/Icons/Stars.png"
                                      PageType="{x:Type pages:ConvertorPage}" />
-                    
+
                     <panels:IconMenu Width="112" Title="Convertor" ImageSource="Images/Icons/Convert.png" />
                     <panels:IconMenu Width="112" Title="Settings" ImageSource="Images/Icons/Setting.png" />
                 </ListBox>

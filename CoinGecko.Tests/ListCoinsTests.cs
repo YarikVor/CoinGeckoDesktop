@@ -20,21 +20,19 @@ public class ListCoinsTests
         var client = new CoinGeckoClient();
 
         var result = await client.GetListCoins();
-        
+
         Assert.NotNull(result);
 
         var element = result[Random.Shared.Next(0, 5)];
-        
+
         Assert.NotNull(element);
-        
+
         Assert.NotNull(element.Id);
         Assert.NotNull(element.Name);
         Assert.NotNull(element.Symbol);
-        
-        WriteAsJson(element);
-        
-    }
 
+        WriteAsJson(element);
+    }
 
 
     public void Write(string str)
@@ -45,7 +43,7 @@ public class ListCoinsTests
     public void WriteAsJson(object obj)
     {
         var json = JsonSerializer.Serialize(obj);
-        
+
         _output.WriteLine(json);
     }
 }

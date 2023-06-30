@@ -8,65 +8,65 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <None Remove="Images\Icons\Search.png" />
-      <Resource Include="Images\Icons\Search.png">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
-      <None Remove="Fonts\Inter.ttf" />
-      <Resource Include="Fonts\Inter.ttf">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
-      <None Remove="Fonts\Caveat.ttf" />
-      <Resource Include="Fonts\Caveat.ttf">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
-      <None Remove="Images\Icons\ArrowLeft.png" />
-      <Resource Include="Images\Icons\ArrowRight.png">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
-      <None Remove="Images\Icons\Change.png" />
-      <Resource Include="Images\Icons\Change.png">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
-      <None Remove="Images\Icons\Convert.png" />
-      <Resource Include="Images\Icons\Convert.png">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
-      <None Remove="Images\Icons\FillStar.png" />
-      <Resource Include="Images\Icons\FillStar.png">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
-      <None Remove="Images\Icons\Info.png" />
-      <Resource Include="Images\Icons\Info.png">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
-      <None Remove="Images\Icons\OutlineStar.png" />
-      <Resource Include="Images\Icons\OutlineStar.png">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
-      <None Remove="Images\Icons\Setting.png" />
-      <Resource Include="Images\Icons\Setting.png">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
-      <None Remove="Images\Icons\Stars.png" />
-      <Resource Include="Images\Icons\Stars.png">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
-      <None Update="appsettings.json">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
+        <None Remove="Images\Icons\Search.png"/>
+        <Resource Include="Images\Icons\Search.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <None Remove="Fonts\Inter.ttf"/>
+        <Resource Include="Fonts\Inter.ttf">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <None Remove="Fonts\Caveat.ttf"/>
+        <Resource Include="Fonts\Caveat.ttf">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <None Remove="Images\Icons\ArrowLeft.png"/>
+        <Resource Include="Images\Icons\ArrowRight.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <None Remove="Images\Icons\Change.png"/>
+        <Resource Include="Images\Icons\Change.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <None Remove="Images\Icons\Convert.png"/>
+        <Resource Include="Images\Icons\Convert.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <None Remove="Images\Icons\FillStar.png"/>
+        <Resource Include="Images\Icons\FillStar.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <None Remove="Images\Icons\Info.png"/>
+        <Resource Include="Images\Icons\Info.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <None Remove="Images\Icons\OutlineStar.png"/>
+        <Resource Include="Images\Icons\OutlineStar.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <None Remove="Images\Icons\Setting.png"/>
+        <Resource Include="Images\Icons\Setting.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <None Remove="Images\Icons\Stars.png"/>
+        <Resource Include="Images\Icons\Stars.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <None Update="appsettings.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.0"/>
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\CoinGecko.Api\CoinGecko.Api.csproj" />
+        <ProjectReference Include="..\CoinGecko.Api\CoinGecko.Api.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="VM\" />
+        <Folder Include="VM\"/>
     </ItemGroup>
 
 </Project>
