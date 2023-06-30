@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoinGecko", "CoinGecko\CoinGecko.csproj", "{3598AC1E-F2E4-48E8-AF48-86FB7CA29EC0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoinGecko.Api", "CoinGecko.Api\CoinGecko.Api.csproj", "{87BF889D-4317-4149-A17A-7050B9F3B4F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoinGecko.Tests", "CoinGecko.Tests\CoinGecko.Tests.csproj", "{8FCD1525-0842-4843-BF52-BCC2795FFBFA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{3598AC1E-F2E4-48E8-AF48-86FB7CA29EC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3598AC1E-F2E4-48E8-AF48-86FB7CA29EC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3598AC1E-F2E4-48E8-AF48-86FB7CA29EC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87BF889D-4317-4149-A17A-7050B9F3B4F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87BF889D-4317-4149-A17A-7050B9F3B4F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87BF889D-4317-4149-A17A-7050B9F3B4F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87BF889D-4317-4149-A17A-7050B9F3B4F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FCD1525-0842-4843-BF52-BCC2795FFBFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FCD1525-0842-4843-BF52-BCC2795FFBFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FCD1525-0842-4843-BF52-BCC2795FFBFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FCD1525-0842-4843-BF52-BCC2795FFBFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

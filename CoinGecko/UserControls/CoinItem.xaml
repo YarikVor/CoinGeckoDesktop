@@ -1,0 +1,31 @@
+<UserControl x:Class="CoinGecko.UserControls.CoinItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:CoinGecko.UserControls"
+             mc:Ignorable="d"
+             d:DesignHeight="48" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Button Background="Transparent" Padding="0" HorizontalContentAlignment="Left" BorderBrush="Transparent">
+            <StackPanel Orientation="Vertical">
+                <TextBlock FontSize="24"
+                           Text="{Binding Nick, RelativeSource= {RelativeSource AncestorType={x:Type local:CoinItem}}   }" />
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontStyle="Italic">@</TextBlock>
+                    <TextBlock FontStyle="Italic" Text="{Binding Id, RelativeSource= {RelativeSource AncestorType={x:Type local:CoinItem}}}" />
+                    <TextBlock Text="-" Margin="4 0"/>
+                    <TextBlock Text="{Binding Symbol, RelativeSource= {RelativeSource AncestorType={x:Type local:CoinItem}}}" />
+                </StackPanel>
+            </StackPanel>
+        </Button>
+        <Button Grid.Column="1" Background="Transparent" Padding="0" BorderBrush="Transparent">
+            <Image  VerticalAlignment="Top" HorizontalAlignment="Right" Height="48" x:Name="Star" Source="../Images/Icons/FillStar.png" />
+        </Button>
+        
+    </Grid>
+</UserControl>
