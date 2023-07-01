@@ -24,6 +24,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\CoinGecko.Api\CoinGecko.Api.csproj"/>
+        <ProjectReference Include="..\YarikVor.TestHelpering\YarikVor.TestHelpering.csproj"/>
     </ItemGroup>
 
 </Project>

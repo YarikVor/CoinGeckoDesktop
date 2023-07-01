@@ -1,25 +1,21 @@
-using System.Text.Json;
 using CoinGecko.Api;
 using Xunit.Abstractions;
+using YarikVor.TestHelpering;
 
 namespace CoinGecko.Tests;
 
-public class ListCoinsTests
+public class ListCoinsTests : TestHelper
 {
-    private readonly ITestOutputHelper _output;
-
-    public ListCoinsTests(ITestOutputHelper output)
+    public ListCoinsTests(ITestOutputHelper output) : base(output)
     {
-        _output = output;
     }
-
 
     [Fact]
     public async Task GetListCoins_IsSuccessful()
     {
-        var client = new CoinGeckoClient();
+        var client = new CoinGeckoClient(null!);
 
-        var result = await client.GetListCoins();
+        var result = await client.GetListCoinsAsync();
 
         Assert.NotNull(result);
 
@@ -32,18 +28,5 @@ public class ListCoinsTests
         Assert.NotNull(element.Symbol);
 
         WriteAsJson(element);
-    }
-
-
-    public void Write(string str)
-    {
-        _output.WriteLine(str);
-    }
-
-    public void WriteAsJson(object obj)
-    {
-        var json = JsonSerializer.Serialize(obj);
-
-        _output.WriteLine(json);
     }
 }

@@ -7,10 +7,10 @@ public class InitTests
     [Fact]
     public async Task Init_IsSuccess()
     {
-        var client = new CoinGeckoClient();
+        var client = new CoinGeckoClient(null!);
 
-        var expected = await client.PingAsync();
+        var actual = await client.PingAsync();
 
-        Assert.True(expected);
+        Assert.True(actual);
     }
 }
