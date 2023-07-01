@@ -48,4 +48,10 @@ public static class ServicesEx
 
         return service;
     }
+
+    public static IServiceCollection AddStorageManager(this IServiceCollection service)
+    {
+        service.AddSingleton<ManagerStorage<RootStorage>>(_ => new ManagerStorage<RootStorage>("appsettings.json"));
+        return service;
+    }
 }
