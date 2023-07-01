@@ -37,7 +37,7 @@ public partial class IconMenu : UserControl
         set => SetValue(TitleProperty, value);
     }
 
-    public Type PageType { get; set; }
+    public Type? PageType { get; set; }
 
     public event Action OnClick;
 }

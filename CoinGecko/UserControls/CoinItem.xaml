@@ -6,6 +6,9 @@
              xmlns:local="clr-namespace:CoinGecko.UserControls"
              mc:Ignorable="d"
              d:DesignHeight="48" d:DesignWidth="300">
+    <UserControl.DataContext>
+        <x:Type TypeName="local:CoinItem" />
+    </UserControl.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -13,15 +16,13 @@
         </Grid.ColumnDefinitions>
         <Button Background="Transparent" Padding="0" HorizontalContentAlignment="Left" BorderBrush="Transparent">
             <StackPanel Orientation="Vertical">
-                <TextBlock FontSize="24"
-                           Text="{Binding Nick, RelativeSource= {RelativeSource AncestorType={x:Type local:CoinItem}}   }" />
+                <TextBlock FontSize="24" Text="{Binding Nick}" />
                 <StackPanel Orientation="Horizontal">
                     <TextBlock FontStyle="Italic">@</TextBlock>
                     <TextBlock FontStyle="Italic"
-                               Text="{Binding Id, RelativeSource= {RelativeSource AncestorType={x:Type local:CoinItem}}}" />
+                               Text="{Binding Id}" />
                     <TextBlock Text="-" Margin="4 0" />
-                    <TextBlock
-                        Text="{Binding Symbol, RelativeSource= {RelativeSource AncestorType={x:Type local:CoinItem}}}" />
+                    <TextBlock Text="{Binding Symbol}" />
                 </StackPanel>
             </StackPanel>
         </Button>
