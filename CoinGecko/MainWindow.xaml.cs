@@ -29,7 +29,7 @@ public partial class MainWindow : DIWindow
 
     public async Task LoadData()
     {
-        var list = await _geckoClient.GetListCoins();
+        var list = await _geckoClient.GetListCoinsAsync();
 
         var collection = new ObservableCollection<CoinItem>(list.Take(10).Select(c => new CoinItem
         {
@@ -56,7 +56,6 @@ public partial class MainWindow : DIWindow
 
         var page = GetRequiredService<Page>(type);
 
-        //NavFrame.Navigate(pageUri, );
         NavFrame.Navigate(page);
     }
 

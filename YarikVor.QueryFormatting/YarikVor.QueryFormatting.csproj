@@ -8,7 +8,6 @@
 
     <ItemGroup>
         <ProjectReference Include="..\YarikVor.QueryFormatting.Abstractions\YarikVor.QueryFormatting.Abstractions.csproj"/>
-        <ProjectReference Include="..\YarikVor.QueryFormatting\YarikVor.QueryFormatting.csproj"/>
     </ItemGroup>
 
 </Project>

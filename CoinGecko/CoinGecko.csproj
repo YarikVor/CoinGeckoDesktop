@@ -53,7 +53,7 @@
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Resource>
         <None Update="appsettings.json">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
         </None>
     </ItemGroup>
 
@@ -63,6 +63,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\CoinGecko.Api\CoinGecko.Api.csproj"/>
+        <ProjectReference Include="..\YarikVor.QueryFormatting.Services\YarikVor.QueryFormatting.Services.csproj"/>
     </ItemGroup>
 
     <ItemGroup>

@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using YarikVor.QueryFormatting.Services;
 
 namespace CoinGecko;
 
@@ -21,9 +22,11 @@ public partial class App : Application
     {
         services
             .AddWindows()
-            .AddJsonConfiguration()
+            //.AddJsonConfiguration()
             .AddPages()
-            .AddCoinGeckoClient();
+            .AddCoinGeckoClient()
+            .AddQueryFormatter()
+            .AddStorageManager();
     }
 
     protected override void OnStartup(StartupEventArgs e)
@@ -44,6 +47,8 @@ public partial class App : Application
     protected override void OnExit(ExitEventArgs e)
     {
         _host.StopAsync();
+
+
         _host.Dispose();
 
         base.OnExit(e);
