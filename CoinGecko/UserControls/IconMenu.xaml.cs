@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace CoinGecko.Panels;
+namespace CoinGecko.UserControls;
 
 public partial class IconMenu : UserControl
 {
@@ -17,6 +17,13 @@ public partial class IconMenu : UserControl
         nameof(Title),
         typeof(string),
         typeof(IconMenu)
+    );
+
+    public static readonly DependencyProperty ColorProperty = DependencyProperty.Register(
+        nameof(Color),
+        typeof(Color),
+        typeof(IconMenu),
+        new PropertyMetadata(Colors.Black)
     );
 
     public IconMenu()
@@ -37,7 +44,13 @@ public partial class IconMenu : UserControl
         set => SetValue(TitleProperty, value);
     }
 
+    public Color Color
+    {
+        get => (Color)GetValue(ColorProperty);
+        set => SetValue(ColorProperty, value);
+    }
+
     public Type? PageType { get; set; }
 
-    public event Action OnClick;
+    public event Action? OnClick;
 }

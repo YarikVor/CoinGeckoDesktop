@@ -3,33 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:CoinGecko.UserControls"
              mc:Ignorable="d"
              d:DesignHeight="48" d:DesignWidth="300">
-    <UserControl.DataContext>
-        <x:Type TypeName="local:CoinItem" />
-    </UserControl.DataContext>
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="Auto" />
-        </Grid.ColumnDefinitions>
-        <Button Background="Transparent" Padding="0" HorizontalContentAlignment="Left" BorderBrush="Transparent">
+    <Button Click="Main_OnClick" Background="Transparent" Padding="0" HorizontalContentAlignment="Stretch"
+            BorderBrush="Transparent">
+        <DockPanel>
+            <Button DockPanel.Dock="Right" Click="Star_OnClick" Background="Transparent" Padding="0"
+                    BorderBrush="Transparent">
+                <Image VerticalAlignment="Top" HorizontalAlignment="Right" Height="48" x:Name="Star"
+                       Source="../Images/Icons/FillStar.png" />
+            </Button>
             <StackPanel Orientation="Vertical">
-                <TextBlock FontSize="24" Text="{Binding Nick}" />
+                <TextBlock FontSize="24" Text="{Binding Name, Mode=OneWay}" />
                 <StackPanel Orientation="Horizontal">
                     <TextBlock FontStyle="Italic">@</TextBlock>
                     <TextBlock FontStyle="Italic"
-                               Text="{Binding Id}" />
+                               Text="{Binding Id, Mode=OneWay}" />
                     <TextBlock Text="-" Margin="4 0" />
-                    <TextBlock Text="{Binding Symbol}" />
+                    <TextBlock Text="{Binding Symbol, Mode=OneWay}" />
                 </StackPanel>
             </StackPanel>
-        </Button>
-        <Button Grid.Column="1" Background="Transparent" Padding="0" BorderBrush="Transparent">
-            <Image VerticalAlignment="Top" HorizontalAlignment="Right" Height="48" x:Name="Star"
-                   Source="../Images/Icons/FillStar.png" />
-        </Button>
 
-    </Grid>
+        </DockPanel>
+
+    </Button>
+
+
 </UserControl>
