@@ -1,0 +1,54 @@
+﻿<windows:DiWindow x:Class="CoinGecko.Windows.MainWindow"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                xmlns:pages="clr-namespace:CoinGecko.Pages"
+                xmlns:windows="clr-namespace:CoinGecko.Windows"
+                xmlns:userControls="clr-namespace:CoinGecko.UserControls"
+                mc:Ignorable="d"
+                Title="MainWindow" Height="450" Width="800"
+                Background="{DynamicResource WindowBackground}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <ListBox Background="{DynamicResource Navbar}" x:Name="NavList"
+                     SelectionChanged="Selector_OnSelectionChanged" DockPanel.Dock="Left">
+                <userControls:IconMenu
+                    Width="80"
+                    Title="{DynamicResource LocNavCoins}"
+                    ImageSource="../Images/Icons/Search.png"
+                    PageType="{x:Type pages:FindPage}" />
+                <userControls:IconMenu
+                    Width="80"
+                    Title="{DynamicResource LocNavConvert}"
+                    ImageSource="../Images/Icons/Convert.png"
+                    PageType="{x:Type pages:ConvertorPage}" />
+                <userControls:IconMenu
+                    Width="80"
+                    Title="{DynamicResource LocNavSettings}"
+                    ImageSource="../Images/Icons/Setting.png"
+                    PageType="{x:Type pages:SettingsPage}" />
+            </ListBox>
+        </Grid>
+
+        <DockPanel Grid.Column="1">
+            <TextBlock
+                Visibility="{Binding VisibilityError, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type windows:DiWindow}}, Mode=OneWay}"
+                DockPanel.Dock="Top"
+                Background="{DynamicResource ErrorBackground}"
+                TextAlignment="Center"
+                Foreground="{DynamicResource ErrorForeground}"
+                FontSize="18"
+                Text="{DynamicResource LocError}" />
+            <Frame x:Name="NavFrame"
+                   HorizontalContentAlignment="Stretch"
+                   VerticalContentAlignment="Stretch"
+                   NavigationUIVisibility="Hidden" />
+        </DockPanel>
+
+    </Grid>
+</windows:DiWindow>
