@@ -1,8 +1,15 @@
+using System.Text.Json.Serialization;
+
 namespace CoinGecko.Api.Dto.Coins;
 
 public class Image
 {
-    public string Thumb { get; set; }
-    public string Small { get; set; }
-    public string Large { get; set; }
+    [JsonPropertyName("thumb")]
+    public string Thumb { get; set; } = null!;
+
+    [JsonPropertyName("small")]
+    public string Small { get; set; } = null!;
+
+    [JsonPropertyName("large")]
+    public string Large { get; set; } = null!;
 }
