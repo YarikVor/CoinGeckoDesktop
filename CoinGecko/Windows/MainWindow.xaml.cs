@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.ObjectModel;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using CoinGecho.MemoryApi;
-using CoinGecko.Api.Dto.Coins;
 using CoinGecko.UserControls;
 
 namespace CoinGecko.Windows;
@@ -27,7 +25,7 @@ public partial class MainWindow : DiWindow
     );
 
     private readonly ICoinGeckoClientWrapper _client;
-    
+
 
     private CancellationTokenSource _cancellationTokenSource = new();
 

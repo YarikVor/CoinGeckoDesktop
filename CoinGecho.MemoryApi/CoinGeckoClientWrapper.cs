@@ -50,11 +50,6 @@ public class CoinGeckoClientWrapper : ICoinGeckoClientWrapper
         return dtos;
     }
 
-    private void ActiveEventOnError()
-    {
-        OnError?.Invoke();
-    }
-
     public async Task<CoinMarketDto[]> GetCoinMarketAsync(params string[] coinIds)
     {
         var keys = coinIds
@@ -126,5 +121,10 @@ public class CoinGeckoClientWrapper : ICoinGeckoClientWrapper
         _memory.Set(key, dto, _optionsForListCoins);
 
         return dto;
+    }
+
+    private void ActiveEventOnError()
+    {
+        OnError?.Invoke();
     }
 }

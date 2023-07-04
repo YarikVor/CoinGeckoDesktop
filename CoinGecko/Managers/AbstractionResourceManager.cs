@@ -7,8 +7,8 @@ namespace CoinGecko.Managers;
 
 public abstract class AbstractionResourceManager
 {
-    protected readonly Dictionary<string, Uri> UriMap = new();
     protected readonly Application Application;
+    protected readonly Dictionary<string, Uri> UriMap = new();
     protected ResourceDictionary? ResourceDictionary;
 
     protected AbstractionResourceManager(UriPair[] items, Application application)

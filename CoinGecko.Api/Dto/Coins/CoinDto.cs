@@ -8,7 +8,7 @@ public class CoinDto
     public string Id { get; set; } = null!;
 
     [JsonPropertyName("symbol")]
-    public string Symbol { get; set; }  = null!;
+    public string Symbol { get; set; } = null!;
 
     [JsonPropertyName("name")]
     public string Name { get; set; } = null!;
@@ -17,7 +17,7 @@ public class CoinDto
     public object? AssetPlatformId { get; set; }
 
     [JsonPropertyName("platforms")]
-    public Dictionary<string, string> Platforms { get; set; }  = null!;
+    public Dictionary<string, string> Platforms { get; set; } = null!;
 
     [JsonPropertyName("detail_platforms")]
     public Dictionary<string, DetailPlatform> DetailPlatforms { get; set; } = null!;
@@ -86,7 +86,7 @@ public class CoinDto
     public float PublicInterestScore { get; set; }
 
     [JsonPropertyName("market_data")]
-    public MarketData MarketData { get; set; }  = null!;
+    public MarketData MarketData { get; set; } = null!;
 
     [JsonPropertyName("community_data")]
     public CommunityData CommunityData { get; set; } = null!;

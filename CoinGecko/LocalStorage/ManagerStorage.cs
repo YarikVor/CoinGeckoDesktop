@@ -20,7 +20,7 @@ public class ManagerStorage : IDisposable
         _timer = TimerForUpdate();
     }
 
-    public RootStorage? Item { get; private set; } 
+    public RootStorage? Item { get; private set; }
 
     public async void Dispose()
     {
