@@ -1,18 +1,20 @@
 using System.Text.Json.Serialization;
 
+namespace CoinGecko.Api.Dto;
+
 public class CoinMarketDto
 {
     [JsonPropertyName("id")]
-    public string Id { get; set; }
+    public string Id { get; set; } = null!;
 
     [JsonPropertyName("symbol")]
-    public string Symbol { get; set; }
+    public string Symbol { get; set; } = null!;
 
     [JsonPropertyName("name")]
-    public string Name { get; set; }
+    public string Name { get; set; } = null!;
 
     [JsonPropertyName("image")]
-    public string Image { get; set; }
+    public string Image { get; set; } = null!;
 
     [JsonPropertyName("current_price")]
     public double CurrentPrice { get; set; }
@@ -30,22 +32,22 @@ public class CoinMarketDto
     public double TotalVolume { get; set; }
 
     [JsonPropertyName("high_24h")]
-    public double High24h { get; set; }
+    public double High24H { get; set; }
 
     [JsonPropertyName("low_24h")]
-    public double Low24h { get; set; }
+    public double Low24H { get; set; }
 
     [JsonPropertyName("price_change_24h")]
-    public double PriceChange24h { get; set; }
+    public double PriceChange24H { get; set; }
 
     [JsonPropertyName("price_change_percentage_24h")]
-    public double PriceChangePercentage24h { get; set; }
+    public double PriceChangePercentage24H { get; set; }
 
     [JsonPropertyName("market_cap_change_24h")]
-    public double MarketCapChange24h { get; set; }
+    public double MarketCapChange24H { get; set; }
 
     [JsonPropertyName("market_cap_change_percentage_24h")]
-    public double MarketCapChangePercentage24h { get; set; }
+    public double MarketCapChangePercentage24H { get; set; }
 
     [JsonPropertyName("circulating_supply")]
     public double CirculatingSupply { get; set; }
@@ -75,11 +77,11 @@ public class CoinMarketDto
     public DateTime AtlDate { get; set; }
 
     [JsonPropertyName("roi")]
-    public object Roi { get; set; }
+    public object? Roi { get; set; }
 
     [JsonPropertyName("last_updated")]
     public DateTime LastUpdated { get; set; }
 
     [JsonPropertyName("price_change_percentage_1h_in_currency")]
-    public float PriceChangePercentage1hInCurrency { get; set; }
+    public float PriceChangePercentage1HInCurrency { get; set; }
 }

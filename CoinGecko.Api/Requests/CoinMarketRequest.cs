@@ -1,34 +1,36 @@
+using YarikVor.QueryFormatting;
+
 namespace CoinGecko.Api.Requests;
 
 public class CoinMarketRequest
 {
-    [QueryName("vs_currency")]
+    [QueryPropertyName("vs_currency")]
     public string VsCurrency { get; set; } = null!;
 
-    [QueryName("ids")]
+    [QueryPropertyName("ids")]
     public string? Ids { get; set; }
 
-    [QueryName("category")]
+    [QueryPropertyName("category")]
     public string? Category { get; set; }
 
-    [QueryName("order")]
+    [QueryPropertyName("order")]
     public string? Order { get; set; }
 
-    [QueryName("per_page")]
+    [QueryPropertyName("per_page")]
     public int PerPage { get; set; } = 100;
 
-    [QueryName("page")]
+    [QueryPropertyName("page")]
     public int Page { get; set; } = 1;
 
-    [QueryName("sparkline")]
+    [QueryPropertyName("sparkline")]
     public bool Sparkline { get; set; } = false;
 
-    [QueryName("price_change_percentage")]
+    [QueryPropertyName("price_change_percentage")]
     public string? PriceChangePercentage { get; set; }
 
-    [QueryName("locale")]
+    [QueryPropertyName("locale")]
     public string? Locale { get; set; }
 
-    [QueryName("precision")]
+    [QueryPropertyName("precision")]
     public string? Precision { get; set; }
 }

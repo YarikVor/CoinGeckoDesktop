@@ -1,6 +1,6 @@
 namespace CoinGecko.Api;
 
-public static class Ex
+internal static class Ex
 {
     public static string ToLowerString(this bool boolean)
     {
