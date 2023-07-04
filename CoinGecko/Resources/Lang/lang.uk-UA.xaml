@@ -1,0 +1,52 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:v="clr-namespace:System;assembly=System.Security.Principal.Windows"
+                    xmlns:pairs="clr-namespace:CoinGecko.Pairs">
+
+    <!--=========================================================================-->
+    <!--Error-->
+    <v:String x:Key="LocError">Помилка</v:String>
+
+    <!--=========================================================================-->
+    <!--Info Page-->
+    <v:String x:Key="LocPrice">Ціна</v:String>
+    <v:String x:Key="LocNavInfo">Інформація</v:String>
+    <v:String x:Key="LocCoinPage">Перейти до сайту</v:String>
+
+
+    <!--=========================================================================-->
+    <!--Navbar (MainWindows)-->
+    <v:String x:Key="LocNavCoins">Монети</v:String>
+    <v:String x:Key="LocNavConvert">Перевести</v:String>
+    <v:String x:Key="LocNavSettings">Налаштування</v:String>
+
+
+    <!--=========================================================================-->
+    <!--Convertor Page-->
+    <v:String x:Key="LocBeforePrice">Перевести з...</v:String>
+    <v:String x:Key="LocAfterPrice">У таку валюту</v:String>
+    <v:String x:Key="LocWarningPrice">Увага: можливі проблеми через обмеження API</v:String>
+
+
+    <!--=========================================================================-->
+    <!--Find Page-->
+    <v:String x:Key="LocFindTitle">Пошук монети</v:String>
+
+
+    <!--=========================================================================-->
+    <!--Settings Page-->
+    <v:String x:Key="LocDeveloper">Розробив YarikVor (Ярослав Воробйов)</v:String>
+    <v:String x:Key="LocLanguage">Мова</v:String>
+    <v:String x:Key="LocTheme">Тема</v:String>
+
+    <x:Array Type="{x:Type pairs:StringPair}" x:Key="LocLanguages">
+        <pairs:StringPair Key="Українська (Ukrainian)" Value="uk-UA" />
+        <pairs:StringPair Key="Англійська (English)" Value="en-US" />
+    </x:Array>
+
+    <x:Array Type="{x:Type pairs:StringPair}" x:Key="LocThemes">
+        <pairs:StringPair Key="Світла" Value="Light" />
+        <pairs:StringPair Key="Темна" Value="Dark" />
+    </x:Array>
+
+</ResourceDictionary>

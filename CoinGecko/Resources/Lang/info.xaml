@@ -1,0 +1,9 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:pairs="clr-namespace:CoinGecko.Pairs">
+    <x:Array x:Key="Languages" Type="{x:Type pairs:UriPair}">
+        <!--A first element is the default language-->
+        <pairs:UriPair Key="en-US" Value="/Resources/Lang/lang.xaml" />
+        <pairs:UriPair Key="uk-UA" Value="/Resources/Lang/lang.uk-UA.xaml" />
+    </x:Array>
+</ResourceDictionary>
