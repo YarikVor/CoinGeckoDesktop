@@ -1,15 +1,26 @@
+using System;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
-using CoinGecko.Api;
+using CoinGecho.MemoryApi;
+using CoinGecko.Api.Dto.Coins;
 
 namespace CoinGecko.Pages;
 
 public partial class ConvertorPage : Page
 {
-    private readonly CoinGeckoClient _geckoClient;
+    public static readonly DependencyProperty CoinItemDtosProperty = DependencyProperty.Register(
+        nameof(CoinItemDtos),
+        typeof(CoinItemDto[]),
+        typeof(ConvertorPage),
+        new PropertyMetadata(Array.Empty<CoinItemDto>())
+    );
 
-    public ConvertorPage(CoinGeckoClient geckoClient)
+    private readonly ICoinGeckoClientWrapper _geckoClient;
+
+    public ConvertorPage(ICoinGeckoClientWrapper geckoClient)
     {
         InitializeComponent();
 
@@ -18,14 +29,15 @@ public partial class ConvertorPage : Page
         GetData();
     }
 
+    public CoinItemDto[] CoinItemDtos
+    {
+        get => (CoinItemDto[])GetValue(CoinItemDtosProperty);
+        set => SetValue(CoinItemDtosProperty, value);
+    }
+
     private async Task GetData()
     {
-        var collection = await _geckoClient.GetListCoinsAsync();
-
-        var items = collection.Select(e => e.Id).ToArray();
-
-        BeforeList.ItemsSource = items;
-        AfterList.ItemsSource = items;
+        CoinItemDtos = await _geckoClient.GetListCoinsAsync();
     }
 
     private async void TextBoxBase_OnTextChanged(object sender, TextChangedEventArgs e)
@@ -44,11 +56,12 @@ public partial class ConvertorPage : Page
             return;
         }
 
-        var beforeCoin = BeforeList.SelectedItem as string;
-        var afterCoin = AfterList.SelectedItem as string;
+        var beforeCoin = (string)BeforeList.SelectedValue;
+        var afterCoin = (string)AfterList.SelectedValue;
+
         var coinsTask = await _geckoClient.GetCoinMarketAsync(beforeCoin, afterCoin);
 
-        if (coinsTask.Length != 2)
+        if (coinsTask.Length != 2 || coinsTask.Any(el => el == null))
         {
             ChangeOutput("Error");
             return;
@@ -59,11 +72,19 @@ public partial class ConvertorPage : Page
 
         var calc = result * afterCoinUsd / beforeCoinUsd;
 
-        ChangeOutput(calc.ToString());
+        ChangeOutput(calc.ToString(CultureInfo.InvariantCulture));
     }
 
     private void ChangeOutput(string text)
     {
         Output.Text = text;
+    }
+
+    private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+    {
+        (BeforeList.SelectedIndex, AfterList.SelectedIndex)
+            = (AfterList.SelectedIndex, BeforeList.SelectedIndex);
+
+        TextBoxBase_OnTextChanged(null, null);
     }
 }

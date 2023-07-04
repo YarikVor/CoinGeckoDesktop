@@ -1,0 +1,41 @@
+<Page x:Class="CoinGecko.Pages.FindPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:userControls="clr-namespace:CoinGecko.UserControls"
+      mc:Ignorable="d"
+      d:DesignHeight="450"
+      d:DesignWidth="800"
+      Title="Find"
+      MaxWidth="600">
+    <Page.DataContext>
+        <Binding RelativeSource="{RelativeSource Self}" />
+    </Page.DataContext>
+    <DockPanel>
+        <StackPanel Orientation="Vertical" DockPanel.Dock="Top">
+            <TextBlock HorizontalAlignment="Stretch" TextAlignment="Center" FontSize="48" FontWeight="Thin"
+                       Margin="0, 32, 0, 0"
+                       Text="{DynamicResource LocFindTitle}" />
+            <TextBox Margin="16 16" TextAlignment="Center" x:Name="Search" TextChanged="TextBoxBase_OnTextChanged"
+                     HorizontalAlignment="Stretch" />
+        </StackPanel>
+
+        <ScrollViewer>
+            <ItemsControl
+                Background="Transparent"
+                ItemsSource="{Binding Path=CoinItems}"
+                HorizontalContentAlignment="Stretch">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <userControls:CoinItem
+                            HorizontalAlignment="Stretch"
+                            DataContext="{Binding}"
+                            ClickMain="CoinInfoOnClickMain" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+
+    </DockPanel>
+</Page>

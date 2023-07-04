@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       mc:Ignorable="d"
+      x:Name="Root"
       Title="ConvertorPage" d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.RowDefinitions>
@@ -19,18 +20,28 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.Column="0" Text="Before" TextAlignment="Center" />
-        <TextBlock Grid.Row="0" Grid.Column="2" Text="After" TextAlignment="Center" />
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="{DynamicResource LocBeforePrice}" TextAlignment="Center" />
+        <TextBlock Grid.Row="0" Grid.Column="2" Text="{DynamicResource LocAfterPrice}" TextAlignment="Center" />
 
-        <ComboBox x:Name="BeforeList" Grid.Row="1" Grid.Column="0">
+        <ComboBox x:Name="BeforeList" Grid.Row="1" Grid.Column="0"
+                  ItemsSource="{Binding  ElementName=Root, Path=CoinItemDtos, Mode=OneWay }"
+                  DisplayMemberPath="Name"
+                  SelectedValuePath="Id">
             <ComboBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <VirtualizingStackPanel />
                 </ItemsPanelTemplate>
             </ComboBox.ItemsPanel>
         </ComboBox>
-        <Image Grid.Row="1" Grid.Column="1" Source="../Images/Icons/Change.png" Height="20" />
-        <ComboBox x:Name="AfterList" Grid.Row="1" Grid.Column="2">
+
+        <Button Click="ButtonBase_OnClick" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center">
+            <Image Source="../Images/Icons/Change.png" Height="20" />
+        </Button>
+
+        <ComboBox x:Name="AfterList" Grid.Row="1" Grid.Column="2"
+                  ItemsSource="{Binding  ElementName=Root, Path=CoinItemDtos, Mode=OneWay }"
+                  DisplayMemberPath="Name"
+                  SelectedValuePath="Id">
             <ComboBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <VirtualizingStackPanel />
@@ -41,6 +52,9 @@
         <TextBox x:Name="Input" Grid.Row="2" Grid.Column="0" TextChanged="TextBoxBase_OnTextChanged" />
         <Image Grid.Row="2" Grid.Column="1" Source="../Images/Icons/ArrowRight.png" Height="20" />
         <TextBlock x:Name="Output" Grid.Row="2" Grid.Column="2" />
+
+        <TextBlock Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="3" TextWrapping="Wrap"
+                   Text="{DynamicResource LocWarningPrice}" />
 
     </Grid>
 </Page>
