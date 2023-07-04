@@ -1,5 +1,5 @@
-﻿using CoinGecko;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
+using YarikVor.QueryFormatting.Abstractions;
 
 namespace YarikVor.QueryFormatting.Services;
 

@@ -1,8 +1,9 @@
 using System.Reflection;
 using System.Text;
 using System.Web;
+using YarikVor.QueryFormatting.Abstractions;
 
-namespace CoinGecko;
+namespace YarikVor.QueryFormatting;
 
 public class QueryFormatter : IQueryFormatter
 {
@@ -29,7 +30,7 @@ public class QueryFormatter : IQueryFormatter
 
         var objInfo = propertyInfos
             .Select(p => (
-                    name: p.GetCustomAttribute<QueryNameAttribute>()?.Name ?? p.Name,
+                    name: p.GetCustomAttribute<QueryPropertyNameAttribute>()?.Name ?? p.Name,
                     value: p.GetValue(obj)
                 )
             )
@@ -66,7 +67,7 @@ public class QueryFormatter : IQueryFormatter
     {
         return _convertorsMap.TryGetValue(type, out var func)
             ? func(obj)
-            : obj.ToString();
+            : obj.ToString()!;
     }
 
     private PropertyInfo[] GetPropertyInfos(Type type)

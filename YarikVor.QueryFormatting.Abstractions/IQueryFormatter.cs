@@ -1,4 +1,4 @@
-namespace CoinGecko;
+namespace YarikVor.QueryFormatting.Abstractions;
 
 public interface IQueryFormatter
 {

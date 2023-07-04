@@ -1,5 +1,5 @@
-using CoinGecko;
 using Xunit.Abstractions;
+using YarikVor.QueryFormatting.Abstractions;
 using YarikVor.TestHelpering;
 
 namespace YarikVor.QueryFormatting.Tests;
