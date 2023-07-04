@@ -5,69 +5,95 @@
         <TargetFramework>net6.0-windows</TargetFramework>
         <Nullable>enable</Nullable>
         <UseWPF>true</UseWPF>
+        <Copyright>YarikVor</Copyright>
+        <RepositoryUrl>https://github.com/YarikVor/CoinGeckoDesktop</RepositoryUrl>
+        <NeutralLanguage>en-US</NeutralLanguage>
     </PropertyGroup>
 
     <ItemGroup>
-        <None Remove="Images\Icons\Search.png"/>
+        <None Remove="Images\Icons\Search.png" />
         <Resource Include="Images\Icons\Search.png">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Resource>
-        <None Remove="Fonts\Inter.ttf"/>
+        <None Remove="Fonts\Inter.ttf" />
         <Resource Include="Fonts\Inter.ttf">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Resource>
-        <None Remove="Fonts\Caveat.ttf"/>
-        <Resource Include="Fonts\Caveat.ttf">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Resource>
-        <None Remove="Images\Icons\ArrowLeft.png"/>
+        <None Remove="Fonts\Caveat.ttf" />
+        <None Remove="Images\Icons\ArrowLeft.png" />
         <Resource Include="Images\Icons\ArrowRight.png">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Resource>
-        <None Remove="Images\Icons\Change.png"/>
+        <None Remove="Images\Icons\Change.png" />
         <Resource Include="Images\Icons\Change.png">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Resource>
-        <None Remove="Images\Icons\Convert.png"/>
+        <None Remove="Images\Icons\Convert.png" />
         <Resource Include="Images\Icons\Convert.png">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Resource>
-        <None Remove="Images\Icons\FillStar.png"/>
+        <None Remove="Images\Icons\FillStar.png" />
         <Resource Include="Images\Icons\FillStar.png">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Resource>
-        <None Remove="Images\Icons\Info.png"/>
+        <None Remove="Images\Icons\Info.png" />
         <Resource Include="Images\Icons\Info.png">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Resource>
-        <None Remove="Images\Icons\OutlineStar.png"/>
+        <None Remove="Images\Icons\OutlineStar.png" />
         <Resource Include="Images\Icons\OutlineStar.png">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Resource>
-        <None Remove="Images\Icons\Setting.png"/>
+        <None Remove="Images\Icons\Setting.png" />
         <Resource Include="Images\Icons\Setting.png">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Resource>
-        <None Remove="Images\Icons\Stars.png"/>
+        <None Remove="Images\Icons\Stars.png" />
         <Resource Include="Images\Icons\Stars.png">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Resource>
         <None Update="appsettings.json">
-            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.0"/>
+        <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="6.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.0" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\CoinGecko.Api\CoinGecko.Api.csproj"/>
-        <ProjectReference Include="..\YarikVor.QueryFormatting.Services\YarikVor.QueryFormatting.Services.csproj"/>
+        <ProjectReference Include="..\CoinGecho.MemoryApi\CoinGecho.MemoryApi.csproj" />
+        <ProjectReference Include="..\CoinGecko.Api\CoinGecko.Api.csproj" />
+        <ProjectReference Include="..\YarikVor.QueryFormatting.Services\YarikVor.QueryFormatting.Services.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="VM\"/>
+        <Page Update="Windows\MainWindow.xaml">
+            <Generator>MSBuild:Compile</Generator>
+            <XamlRuntime>Wpf</XamlRuntime>
+            <SubType>Designer</SubType>
+        </Page>
+        <Page Update="Windows\ViewerWindows.xaml">
+            <Generator>MSBuild:Compile</Generator>
+            <XamlRuntime>Wpf</XamlRuntime>
+            <SubType>Designer</SubType>
+        </Page>
+        <Page Update="Resources\Styles\Style.xaml">
+            <Generator>MSBuild:Compile</Generator>
+            <XamlRuntime>Wpf</XamlRuntime>
+            <SubType>Designer</SubType>
+        </Page>
+        <Page Update="Resources\Lang\lang.uk-UA.xaml">
+            <Generator>MSBuild:Compile</Generator>
+            <XamlRuntime>Wpf</XamlRuntime>
+            <SubType>Designer</SubType>
+        </Page>
+        <Page Update="Resources\Themes\Dark.xaml">
+            <Generator>MSBuild:Compile</Generator>
+            <XamlRuntime>Wpf</XamlRuntime>
+            <SubType>Designer</SubType>
+        </Page>
     </ItemGroup>
 
 </Project>
